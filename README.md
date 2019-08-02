@@ -1,3 +1,6 @@
+add -> MEUREADME.md
+
+
 # Introdução ao Docker em 22 minutos
 
 Projeto gerado na videoaula do canal no YouTube Programador a Bordo.
