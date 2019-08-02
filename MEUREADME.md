@@ -1,20 +1,19 @@
-# Meu readme
+# Como rodar
 
-## Como rodar
 ### Container MySql
-1. Cria imagem MySql
+1. Cria imagem MySql\
 `docker build -t mysql-demo-image -f api/db/Dockerfile .`
 
-2. Cria container
-`docker run -d --rm --name mysql-container mysql-demo-image`
---com volume (para não perder os dados), e com porta (para expor na minha máquina)
+2. Cria container\
+`docker run -d --rm --name mysql-container mysql-demo-image`\
+--com volume (para não perder os dados), e com porta (para expor na minha máquina)\
 `docker run -d -v //c/projetos/docker-introducao/api/db/data://var/lib/mysql -p 3306:3306 --rm --name mysql-demo-container mysql-demo-image`
 
-3. Verifica container
+3. Verifica container\
 `docker ps`
 
-4. Entra no MySql
-`docker exec -it mysql-demo-container /bin/bash`
+4. Entra no MySql\
+`docker exec -it mysql-demo-container /bin/bash`\
 `mysql -uroot -pprogramadorabordo`
 
 5. Cria BD
@@ -34,5 +33,5 @@ INSERT INTO products VALUE(0, 'Curso JS Fullstack', 900);
 
 SELECT * from products;
 ```
-6. Se quiser fazer pelo phpMyAdmin
+6. Se quiser fazer pelo phpMyAdmin\
 `docker run --name phpmyadmin-container -d --link mysql-container:db -p 8080:80 phpmyadmin/phpmyadmin`
