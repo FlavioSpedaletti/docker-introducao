@@ -35,3 +35,13 @@ SELECT * from products;
 ```
 6. Se quiser fazer pelo phpMyAdmin\
 `docker run --name phpmyadmin-container -d --link mysql-container:db -p 8080:80 phpmyadmin/phpmyadmin`
+
+### Container Node
+1. Cria imagem Node\
+`docker build -t node-demo-image -f api/Dockerfile .`
+
+2. Cria container\
+`docker run -d -v //c/projetos/docker-introducao/api://home/node/app -p 9001:9001 --link mysql-demo-container --rm --name node-demo-container node-demo-image`
+
+3. Verifica container\
+`docker ps`
