@@ -5,7 +5,7 @@
 `docker build -t mysql-demo-image -f api/db/Dockerfile .`
 
 2. Cria container\
-`docker run -d --rm --name mysql-container mysql-demo-image`\
+`docker run -d --rm --name mysql-demo-container mysql-demo-image`\
 --com volume (para não perder os dados), e com porta (para expor na minha máquina)\
 `docker run -d -v //c/projetos/docker-introducao/api/db/data://var/lib/mysql -p 3306:3306 --rm --name mysql-demo-container mysql-demo-image`
 
@@ -45,3 +45,23 @@ SELECT * from products;
 
 3. Verifica container\
 `docker ps`
+
+**Por algum motivo não estou conseguindo rodar o Node pelo Docker, então a solução é instalar o Docker na máquina e rodar normalmente**
+`cd api`
+`npm start`
+
+### Container PHP
+1. Cria imagem PHP\
+`docker build -t php-demo-image -f website/Dockerfile .`
+
+2. Cria container\
+`docker run -d --rm --name php-demo-container php-demo-image`\
+--com volume (para não perder os dados), e com porta (para expor na minha máquina)\
+`docker run -d -v //c/projetos/docker-introducao/website://var/www/html -p 8888:80 --rm --name php-demo-container php-demo-image`
+
+3. Verifica container\
+`docker ps`
+
+**Pode ser que o PHP não consiga ler a api rest em localhost. Como solução para isso é possível utilizar alguma ferramenta que expões o localhost, como o ngrok.com**
+
+:whale:

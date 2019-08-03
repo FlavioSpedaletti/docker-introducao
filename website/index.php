@@ -7,7 +7,9 @@
 </head>
 <body>
   <?php
-    $result = file_get_contents("http://node-container:9001/products");
+    // $result = file_get_contents("http://node-demo-container:9001/products");
+    $result = file_get_contents("http://72cddb9c.ngrok.io/products");
+
     $products = json_decode($result);
   ?>
   
